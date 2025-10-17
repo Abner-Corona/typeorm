@@ -9,6 +9,7 @@
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
+    "dev-ssr": "quasar dev -m ssr",
     "build": "quasar build",
     "postinstall": "quasar prepare"
   },
@@ -17,7 +18,11 @@
     "axios": "^1.12.2",
     "pinia": "^3.0.3",
     "quasar": "^2.18.5",
+    "reflect-metadata": "^0.2.2",
     "register-service-worker": "^1.7.2",
+    "swagger-ui-express": "^5.0.1",
+    "tsoa": "^6.6.0",
+    "typeorm": "^0.3.27",
     "vue": "^3.5.22",
     "vue-i18n": "^11.1.12",
     "vue-router": "^4.6.3"
@@ -26,6 +31,7 @@
     "@intlify/unplugin-vue-i18n": "^11.0.1",
     "@quasar/app-vite": "^2.4.0",
     "@types/node": "^24.8.0",
+    "@types/swagger-ui-express": "^4.1.8",
     "autoprefixer": "^10.4.21",
     "typescript": "^5.9.3",
     "workbox-build": "^7.3.0",

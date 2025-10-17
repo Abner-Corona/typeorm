@@ -1,13 +1,15 @@
-# Progress
+# Progress (Updated: 2025-10-17)
 
 ## Done
 
-- [x] Initialize project
+- Updated TestController to use proper Tsoa decorators like the example
+- Removed example UsersController files
 
 ## Doing
 
-- [ ] Current task
+
 
 ## Next
 
-- [ ] Upcoming task
+- Test the API endpoints
+- Generate OpenAPI spec
