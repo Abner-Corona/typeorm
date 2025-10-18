@@ -12,18 +12,18 @@ export default defineSsrMiddleware(async () => {
   // something to do with the server "app"
   const specOptions: ExtendedSpecConfig = {
     basePath: "/api",
-    entryFile: "./src-ssr/server.ts",
+    entryFile: "src-ssr/server.ts",
     specVersion: 3,
-    outputDirectory: "./src-ssr/swaggerGenerate",
-    controllerPathGlobs: ["./src-ssr/controllers/**/*.ts"],
+    outputDirectory: "src-ssr/swaggerGenerate",
+    controllerPathGlobs: ["src-ssr/controllers/**/*.ts"],
     noImplicitAdditionalProperties: "throw-on-extras",
   };
 
   const routesOptions: ExtendedRoutesConfig = {
     basePath: "/api",
-    entryFile: "./src-ssr/server.ts",
-    controllerPathGlobs: ["./src-ssr/controllers/**/*.ts"],
-    routesDir: "./src-ssr/routesGenerate",
+    entryFile: "src-ssr/server.ts",
+    controllerPathGlobs: ["src-ssr/controllers/**/*.ts"],
+    routesDir: "src-ssr/routesGenerate",
     noImplicitAdditionalProperties: "throw-on-extras",
     bodyCoercion: true,
   };

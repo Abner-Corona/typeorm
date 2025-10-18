@@ -4,7 +4,10 @@ import { Controller, Get, Path, Route } from "tsoa";
 export class TestController extends Controller {
   @Get("/")
   public async getTest() {
-    return { message: "Hello from Tsoa!", timestamp: new Date().toISOString() };
+    return {
+      messagex: "Hsccssccssc",
+      timestamp: new Date().toISOString(),
+    };
   }
 
   @Get("/echo/{message}")

@@ -26,13 +26,13 @@
 										"timestamp": {
 											"type": "string"
 										},
-										"message": {
+										"messagex": {
 											"type": "string"
 										}
 									},
 									"required": [
 										"timestamp",
-										"message"
+										"messagex"
 									],
 									"type": "object"
 								}

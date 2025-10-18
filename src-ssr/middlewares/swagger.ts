@@ -1,7 +1,7 @@
 import { defineSsrMiddleware } from "#q-app/wrappers";
 
 import swaggerUi from "swagger-ui-express";
-import { RegisterRoutes } from "../routesGenerate/routes";
+import { RegisterRoutes } from "src-ssr/routesGenerate/routes";
 // "async" is optional;
 // more info on params: https://v2.quasar.dev/quasar-cli-vite/developing-ssr/ssr-middleware
 export default defineSsrMiddleware(
@@ -10,7 +10,7 @@ export default defineSsrMiddleware(
     app.use(
       "/swagger",
       swaggerUi.serve,
-      swaggerUi.setup(require("../swaggerGenerate/swagger.json"))
+      swaggerUi.setup(require("src-ssr/swaggerGenerate/swagger.json"))
     );
     RegisterRoutes(app);
   }
