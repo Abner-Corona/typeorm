@@ -1,0 +1,12 @@
+# Use the official MySQL image from Docker Hub
+FROM mysql:latest
+
+# Environment variables are set in docker-compose.yml
+
+# Expose the default MySQL port
+EXPOSE 3306
+
+# Optional: Copy custom configuration files if needed
+# COPY my.cnf /etc/mysql/conf.d/
+
+# The MySQL image will automatically run the MySQL server when the container starts
