@@ -130,6 +130,7 @@ export default defineConfig((ctx) => {
       // (gets superseded if process.env.PORT is specified at runtime)
 
       middlewares: [
+        "database",
         "tsoa",
         "swagger", // keep this above render
         "render", // keep this as last one

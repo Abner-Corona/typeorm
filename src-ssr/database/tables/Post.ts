@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity()
+@Entity(process.env.NODE_ENV === "production" ? { name: "Post" } : {})
 export class Post {
   @PrimaryGeneratedColumn()
   id: number;
