@@ -20,6 +20,7 @@ import {
   defineSsrServeStaticContent,
   defineSsrRenderPreloadTag,
 } from "#q-app/wrappers";
+import bodyParser from "body-parser";
 
 declare module "#q-app" {
   interface SsrDriver {
@@ -41,7 +42,8 @@ export const create = defineSsrCreate((/* { ... } */) => {
   // attackers can use this header to detect apps running Express
   // and then launch specifically-targeted attacks
   app.disable("x-powered-by");
-
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.json());
   // place here any middlewares that
   // absolutely need to run before anything else
   if (process.env.PROD) {

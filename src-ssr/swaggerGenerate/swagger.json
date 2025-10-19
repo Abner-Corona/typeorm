@@ -6,7 +6,34 @@
 		"parameters": {},
 		"requestBodies": {},
 		"responses": {},
-		"schemas": {},
+		"schemas": {
+			"usersTablex": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"name": {
+						"type": "string"
+					},
+					"agex": {
+						"type": "number",
+						"format": "double"
+					},
+					"email": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"name",
+					"agex",
+					"email"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
 		"securitySchemes": {}
 	},
 	"info": {
@@ -21,20 +48,16 @@
 						"description": "Ok",
 						"content": {
 							"application/json": {
-								"schema": {
-									"properties": {
-										"timestamp": {
-											"type": "string"
-										},
-										"messagex": {
-											"type": "string"
+								"schema": {},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"agex": 30,
+											"email": "joshn@example.com",
+											"id": 1,
+											"name": "John"
 										}
-									},
-									"required": [
-										"timestamp",
-										"messagex"
-									],
-									"type": "object"
+									}
 								}
 							}
 						}
@@ -42,34 +65,26 @@
 				},
 				"security": [],
 				"parameters": []
-			}
-		},
-		"/test/echo/{message}": {
-			"get": {
-				"operationId": "EchoMessage",
+			},
+			"post": {
+				"operationId": "PostTest",
 				"responses": {
-					"200": {
-						"description": "Ok",
-						"content": {
-							"application/json": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
+					"204": {
+						"description": "No content"
 					}
 				},
 				"security": [],
-				"parameters": [
-					{
-						"in": "path",
-						"name": "message",
-						"required": true,
-						"schema": {
-							"type": "string"
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/usersTablex"
+							}
 						}
 					}
-				]
+				}
 			}
 		}
 	},

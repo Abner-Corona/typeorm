@@ -12,6 +12,17 @@ import type { Request as ExRequest, Response as ExResponse, RequestHandler, Rout
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
 const models: TsoaRoute.Models = {
+    "usersTablex": {
+        "dataType": "refObject",
+        "properties": {
+            "id": {"dataType":"double","required":true},
+            "name": {"dataType":"string","required":true},
+            "agex": {"dataType":"double","required":true},
+            "email": {"dataType":"string","required":true},
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 };
 const templateService = new ExpressTemplateService(models, {"noImplicitAdditionalProperties":"throw-on-extras","bodyCoercion":true});
 
@@ -58,25 +69,25 @@ export function RegisterRoutes(app: Router) {
             }
         });
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-        const argsTestController_echoMessage: Record<string, TsoaRoute.ParameterSchema> = {
-                message: {"in":"path","name":"message","required":true,"dataType":"string"},
+        const argsTestController_postTest: Record<string, TsoaRoute.ParameterSchema> = {
+                requestBody: {"in":"body","name":"requestBody","required":true,"ref":"usersTablex"},
         };
-        app.get('/api/test/echo/:message',
+        app.post('/api/test',
             ...(fetchMiddlewares<RequestHandler>(TestController)),
-            ...(fetchMiddlewares<RequestHandler>(TestController.prototype.echoMessage)),
+            ...(fetchMiddlewares<RequestHandler>(TestController.prototype.postTest)),
 
-            async function TestController_echoMessage(request: ExRequest, response: ExResponse, next: any) {
+            async function TestController_postTest(request: ExRequest, response: ExResponse, next: any) {
 
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
             let validatedArgs: any[] = [];
             try {
-                validatedArgs = templateService.getValidatedArgs({ args: argsTestController_echoMessage, request, response });
+                validatedArgs = templateService.getValidatedArgs({ args: argsTestController_postTest, request, response });
 
                 const controller = new TestController();
 
               await templateService.apiHandler({
-                methodName: 'echoMessage',
+                methodName: 'postTest',
                 controller,
                 response,
                 next,
